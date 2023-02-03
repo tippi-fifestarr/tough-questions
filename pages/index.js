@@ -32,8 +32,8 @@ export default function Home() {
               <Image
                 src="/tf-logo4.png"
                 alt="Tippi Fifestarr's logo"
-                width={300}
-                height={280}
+                width={200}
+                height={180}
                 priority
               />
             </a>
@@ -43,7 +43,10 @@ export default function Home() {
         <div className={styles.center}>
           <div>
             <h1>Tough Questions</h1>
-            <input></input>
+            <textarea
+              placeholder="start typing here"
+              className={styles.promptbox}
+            />
           </div>
           <div className={styles.thirteen}>
             <button onClick={setQuestionAnswered}>Ask</button>

@@ -34,6 +34,72 @@
   border-radius: var(--border-radius);
 }
 
+.prompt-container {
+  place-content: flex-end center;
+  align-items: center;
+  display: flex;
+  flex: 0 0 auto;
+  flex-flow: column nowrap;
+  gap: 16px;
+  height: min-content;
+  padding: 0px;
+  width: min-content;
+}
+
+.promptbox {
+  border-bottom-width: 1px;
+  border-color: rgba(255, 255, 255, 0.1);
+  border-left-width: 1px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 1px;
+  place-content: flex-start;
+  align-items: flex-start;
+  background-color: rgba(255, 255, 255, 0.05);
+  border-radius: 16px;
+  display: flex;
+  flex: 0 0 auto;
+  flex-flow: column nowrap;
+  gap: 10px;
+  height: 150px;
+  overflow: hidden;
+  padding: 20px;
+  position: relative;
+  width: 610px;
+  max-width: 1200px;
+  will-change: transform;
+  overflow: auto;
+  outline: none;
+  resize: none;
+  font-size: 16px;
+  font-style: normal;
+  letter-spacing: 0px;
+  line-height: 1.6em;
+  text-align: start;
+  color: rgba(255, 255, 255, 0.75);
+  text-decoration: none;
+  text-transform: none;
+}
+
+.promptbbox:focus {
+  border-color: rgba(255, 255, 255, 0.75);
+}
+
+.promptbuttons {
+  display: flex;
+  place-content: center;
+  align-items: center;
+  justify-content: flex-end;
+  flex: 0 0 auto;
+  flex-flow: row nowrap;
+  gap: 12px;
+  height: min-content;
+  overflow: hidden;
+  padding: 0px;
+  position: relative;
+  width: 100%;
+}
+
 .code {
   font-weight: 700;
   font-family: var(--font-mono);
@@ -97,7 +163,7 @@
 
 .center::before,
 .center::after {
-  content: '';
+  content: "";
   left: 50%;
   position: absolute;
   filter: blur(45px);
@@ -125,7 +191,7 @@
 
 .thirteen::before,
 .thirteen::after {
-  content: '';
+  content: "";
   position: absolute;
   z-index: -1;
 }
