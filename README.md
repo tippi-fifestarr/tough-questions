@@ -11,7 +11,7 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 1. First, I scraped out the index.js from the nextJS starter and filled it with my idea and "brand".
 1. Then, I used state variables to conditionally render the 4 modules onClick of the Ask button.
 1. Then I updated this readme and my presentation!
-1. For the final version, check out: [rendered-gpt branch](https://github.com/tippi-fifestarr/tough-questions/tree/rendered-gpt)
+1. For the final version, check out: [rendered-gpt branch](https://github.com/tippi-fifestarr/tough-questions/tree/rendered-gpt) or [main Vercel deployment](https://tough-questions.vercel.app/)
 
 ## Getting Started
 
