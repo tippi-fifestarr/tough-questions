@@ -6,16 +6,26 @@ Tippi created this simple starter for his presentation using the create-next-app
 
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
+## How I did it:
+
+1. First, I scraped out the index.js from the nextJS starter and filled it with my idea and "brand".
+1. Then, I used state variables to conditionally render the 4 modules onClick of the Ask button.
+1. Then I updated this readme and my presentation! [starter branch](https://github.com/tippi-fifestarr/tough-questions/blob/starter-branch)
+1. The tricky part is connecting the OpenAI API.  First [get an API Key](https://platform.openai.com/account/api-keys).
+1. Put the API Key in a .env.local like this:  OPENAI_API_KEY=ab-cdef (your api key)
+1. Make an gpt.js in the api/ folder in /pages.  This takes the key and awaits response from OpenAI API
+1. Make an Asker component that does the fetch POST request to /api/gpt and processes the response into parts (module title and description)
+1. Tweaking the prompt and slice functions to get the parts exactly right most of the time.
+1. Fill in the blanks
+
 ## Getting Started
 
-First, run the development server:
+> npm install
+
+Then, run the development server:
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
@@ -30,7 +40,7 @@ This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-opti
 
 ## Next Steps
 
-Clean up the code. Use loops to process the returned modules
+1. Clean up the code. Use loops to process the returned modules
 
 - _title 1_description is right here blah blah blah_another field you need_another one_ another one
 - _title 2_description is right here blah blah blah_another field you need_another one_ another one
@@ -42,6 +52,11 @@ Clean up the code. Use loops to process the returned modules
   const module = split("\_")
   module[0] title
   module[1] description
+
+2. Darkmode (some user testing showed white text on white background)
+3. Prompt Chaining (onClick of module choice, takes shows user a lesson plan for that module)
+4. Web3 stuff (login, mint a lesson when completed to save the content)
+5. Axelar?
 
 ## Learn More
 
