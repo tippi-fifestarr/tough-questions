@@ -60,25 +60,24 @@ const Asker = ({
     const result = await gptResult.json();
     console.log("result: ", result.output.text);
     setResult(result.output.text);
-    // set result1title to equal the result.output.text that is after "Module 1, Overview: " and before "Course Description: "
+    // set result1title to equal the result.output.text that is after "Title1: " and before "CD1: "
     setResult1title(
       result.output.text.slice(
-        result.output.text.indexOf("Module 1, Overview: ") + 20,
+        result.output.text.indexOf("Title1: ") + 8,
         result.output.text.indexOf("CD1: ")
       )
     );
-    // set result1description to equal the result.output.text that is after "Course Description: " and before "Module 2, Introduction to the Topic: "
+    // set result1description to equal the result.output.text that is after "CD1: " and before "Title1: "
     setResult1description(
       result.output.text.slice(
         result.output.text.indexOf("CD1: ") + 5,
-        result.output.text.indexOf("Module 2, Introduction to the Topic: ")
+        result.output.text.indexOf("Module 2")
       )
     );
-    // set result2title to equal the result.output.text that is after "Module 2, Introduction to the Topic: " and before "CD2: "
+    // set result2title to equal the result.output.text that is after "Title2: " and before "CD2: "
     setResult2title(
       result.output.text.slice(
-        result.output.text.indexOf("Module 2, Introduction to the Topic: ") +
-          37,
+        result.output.text.indexOf("Title2: ") + 8,
         result.output.text.indexOf("CD2: ")
       )
     );
@@ -86,13 +85,13 @@ const Asker = ({
     setResult2description(
       result.output.text.slice(
         result.output.text.indexOf("CD2: ") + 5,
-        result.output.text.indexOf("Module 3, Core Learnings: ")
+        result.output.text.indexOf("Module 3")
       )
     );
-    // set result3title to equal the result.output.text that is after "Module 3, Core Learnings: " and before "CD3: "
+    // set result3title to equal the result.output.text that is after "Title3: " and before "CD3: "
     setResult3title(
       result.output.text.slice(
-        result.output.text.indexOf("Module 3, Core Learnings: ") + 26,
+        result.output.text.indexOf("Title3: ") + 8,
         result.output.text.indexOf("CD3: ")
       )
     );
@@ -100,13 +99,13 @@ const Asker = ({
     setResult3description(
       result.output.text.slice(
         result.output.text.indexOf("CD3: ") + 5,
-        result.output.text.indexOf("Module 4, Advanced Studies: ")
+        result.output.text.indexOf("Module 4")
       )
     );
-    // set result4title to equal the result.output.text that is after "Module 4, Advanced Studies: " and before "CD4: "
+    // set result4title to equal the result.output.text that is after "Title4: " and before "CD4: "
     setResult4title(
       result.output.text.slice(
-        result.output.text.indexOf("Module 4, Advanced Studies: ") + 29,
+        result.output.text.indexOf("Title4: ") + 8,
         result.output.text.indexOf("CD4: ")
       )
     );
