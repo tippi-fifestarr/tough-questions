@@ -25,18 +25,7 @@ const Asker = ({
   result4description,
   setResult4description,
 }) => {
-  // const [prompt, setPrompt] = useState("");
   const [generating, setGenerating] = useState(false);
-  // const [questionAnswered, setQuestionAnswered] = useState(false);
-  // how do I get the questionAnswered state into the main page, thereby updating the field to show the 4 modules?
-  // useEffect(() => {
-  //   if (questionAnswered) {
-  //     console.log("questionAnswered: ", questionAnswered);
-  //     console.log("prompt: ", prompt);
-  //     // setPrompt(prompt);
-  //     // setQuestionAnswered(true);
-  //   }
-  // }, [questionAnswered]);
 
   // this is the part that prepares the AI for the prompt from the user
   const prefix =
@@ -126,9 +115,9 @@ const Asker = ({
         // ) :
         generating ? (
           <button
-            onClick={alert(
-              `asking '${prefix} ${promptReq.promptReq}'... Hold yer horses, sheesh!`
-            )}
+          // onClick={alert(
+          //   `asking '${prefix} ${promptReq.promptReq}'... Hold yer horses, sheesh!`
+          // )}
           >
             Asking...
           </button>
