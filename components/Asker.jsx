@@ -8,6 +8,22 @@ const Asker = ({
   setResult,
   questionAnswered,
   setQuestionAnswered,
+  result1title,
+  setResult1title,
+  result1description,
+  setResult1description,
+  result2title,
+  setResult2title,
+  result2description,
+  setResult2description,
+  result3title,
+  setResult3title,
+  result3description,
+  setResult3description,
+  result4title,
+  setResult4title,
+  result4description,
+  setResult4description,
 }) => {
   // const [prompt, setPrompt] = useState("");
   const [generating, setGenerating] = useState(false);
@@ -23,10 +39,8 @@ const Asker = ({
   // }, [questionAnswered]);
 
   // this is the part that prepares the AI for the prompt from the user
-  const prefix1 =
-    "I'm going to send you a prompt, and I want you to respond as an expert in that field would, creating 4 modules, labeled 'module 1, overview: ', 'module 2, introduction to the topic: ', 'module 3, core learnings: ', and 'module 4, advanced studies: '.  Make sure your description of each module begins with the label but also includes a unique title related to the question and a brief 3 sentence summary of the content in the lessons.  Respond as if you were creating four modules for a student interested in learning more about the following prompt, each of which could later be divided into at least 5 lessons expanding on that course of study, which is being asked about in this next block of text, which is a prompt from the user: ";
   const prefix =
-    "I'm going to send you a prompt, and I want you to respond as an expert in that field would, creating 4 modules, labeled 'module 1, overview: ', 'module 2, introduction to the topic: ', 'module 3, core learnings: ', and 'module 4, advanced studies: '. Make sure your answer for each module begins with the label followed by a unique title related to the question and this module, followed by a label for 'course description' and then the description that is a brief, engaging, and intelligent 3 sentence summary of the content in the lessons. Respond as if you were creating four modules for a student interested in learning more about the following prompt, each of which could later be divided into at least 5 lessons expanding on that course of study, which is being asked about in this next block of text, which is a prompt from the user: ";
+    "I'm going to send you a prompt, and I want you to respond as an expert in that field would, creating 4 modules, labeled exactly as 'Module 1, Overview: ', 'Module 2, Introduction to the Topic: ', 'Module 3, Core Learnings: ', and 'Module 4, Advanced Studies: '. Make sure you format the labels exactly as I gave them to you.  Make sure your answer for each module begins with the label directly followed by 'Title1: ', 'Title2: ', 'Title3: ', or 'Title4: ' and a unique title related to the question and this module. On a new line give the label for 'CD1: ' or 'CD2: ', 'CD3: ', 'CD4: ', depending on which one it is) and then the description that is a brief, engaging, and intelligent 3 sentence summary of the content in the lessons. Respond as if you were creating four modules for a student interested in learning more about the following prompt, each of which could later be divided into at least 5 lessons expanding on that course of study, which is being asked about in this next block of text, which is a prompt from the user: ";
 
   const generateModules = async () => {
     setGenerating(true);
@@ -46,6 +60,61 @@ const Asker = ({
     const result = await gptResult.json();
     console.log("result: ", result.output.text);
     setResult(result.output.text);
+    // set result1title to equal the result.output.text that is after "Module 1, Overview: " and before "Course Description: "
+    setResult1title(
+      result.output.text.slice(
+        result.output.text.indexOf("Module 1, Overview: ") + 20,
+        result.output.text.indexOf("CD1: ")
+      )
+    );
+    // set result1description to equal the result.output.text that is after "Course Description: " and before "Module 2, Introduction to the Topic: "
+    setResult1description(
+      result.output.text.slice(
+        result.output.text.indexOf("CD1: ") + 5,
+        result.output.text.indexOf("Module 2, Introduction to the Topic: ")
+      )
+    );
+    // set result2title to equal the result.output.text that is after "Module 2, Introduction to the Topic: " and before "CD2: "
+    setResult2title(
+      result.output.text.slice(
+        result.output.text.indexOf("Module 2, Introduction to the Topic: ") +
+          37,
+        result.output.text.indexOf("CD2: ")
+      )
+    );
+    // set result2description to equal the result.output.text that is after "CD2: " and before "Module 3, Core Learnings: "
+    setResult2description(
+      result.output.text.slice(
+        result.output.text.indexOf("CD2: ") + 5,
+        result.output.text.indexOf("Module 3, Core Learnings: ")
+      )
+    );
+    // set result3title to equal the result.output.text that is after "Module 3, Core Learnings: " and before "CD3: "
+    setResult3title(
+      result.output.text.slice(
+        result.output.text.indexOf("Module 3, Core Learnings: ") + 26,
+        result.output.text.indexOf("CD3: ")
+      )
+    );
+    // set result3description to equal the result.output.text that is after "CD3: " and before "Module 4, Advanced Studies: "
+    setResult3description(
+      result.output.text.slice(
+        result.output.text.indexOf("CD3: ") + 5,
+        result.output.text.indexOf("Module 4, Advanced Studies: ")
+      )
+    );
+    // set result4title to equal the result.output.text that is after "Module 4, Advanced Studies: " and before "CD4: "
+    setResult4title(
+      result.output.text.slice(
+        result.output.text.indexOf("Module 4, Advanced Studies: ") + 29,
+        result.output.text.indexOf("CD4: ")
+      )
+    );
+    // set result4description to equal the result.output.text that is after "CD4: "
+    setResult4description(
+      result.output.text.slice(result.output.text.indexOf("CD4: ") + 5)
+    );
+
     setQuestionAnswered(true);
     setGenerating(false);
   };

@@ -11,7 +11,14 @@ export default function Home() {
   const [prompt, setPrompt] = useState("");
   const [questionAnswered, setQuestionAnswered] = useState(false);
   const [result, setResult] = useState("");
-  // useEffect with the questionAnswered and the result of the api call
+  const [result1title, setResult1title] = useState("");
+  const [result1description, setResult1description] = useState("");
+  const [result2title, setResult2title] = useState("");
+  const [result2description, setResult2description] = useState("");
+  const [result3title, setResult3title] = useState("");
+  const [result3description, setResult3description] = useState("");
+  const [result4title, setResult4title] = useState("");
+  const [result4description, setResult4description] = useState("");
 
   return (
     <>
@@ -60,6 +67,22 @@ export default function Home() {
             setResult={setResult}
             questionAnswered={questionAnswered}
             setQuestionAnswered={setQuestionAnswered}
+            result1title={result1title}
+            setResult1title={setResult1title}
+            result1description={result1description}
+            setResult1description={setResult1description}
+            result2title={result2title}
+            setResult2title={setResult2title}
+            result2description={result2description}
+            setResult2description={setResult2description}
+            result3title={result3title}
+            setResult3title={setResult3title}
+            result3description={result3description}
+            setResult3description={setResult3description}
+            result4title={result4title}
+            setResult4title={setResult4title}
+            result4description={result4description}
+            setResult4description={setResult4description}
           />
           <div className={styles.input}></div>
         </div>
@@ -75,9 +98,9 @@ export default function Home() {
               rel="noopener noreferrer"
             >
               <h2 className={inter.className}>
-                Docs <span>-&gt;</span>
+                {result1title} <span>-&gt;</span>
               </h2>
-              <p className={inter.className}>{result}</p>
+              <p className={inter.className}>{result1description}</p>
             </a>
 
             <a
@@ -87,11 +110,9 @@ export default function Home() {
               rel="noopener noreferrer"
             >
               <h2 className={inter.className}>
-                Learn <span>-&gt;</span>
+                {result2title} <span>-&gt;</span>
               </h2>
-              <p className={inter.className}>
-                Learn about Next.js in an interactive course with&nbsp;quizzes!
-              </p>
+              <p className={inter.className}>{result2description}</p>
             </a>
 
             <a
@@ -101,11 +122,9 @@ export default function Home() {
               rel="noopener noreferrer"
             >
               <h2 className={inter.className}>
-                Templates <span>-&gt;</span>
+                {result3title} <span>-&gt;</span>
               </h2>
-              <p className={inter.className}>
-                Discover and deploy boilerplate example Next.js&nbsp;projects.
-              </p>
+              <p className={inter.className}>{result3description}</p>
             </a>
 
             <a
@@ -115,17 +134,14 @@ export default function Home() {
               rel="noopener noreferrer"
             >
               <h2 className={inter.className}>
-                Deploy <span>-&gt;</span>
+                {result4title} <span>-&gt;</span>
               </h2>
-              <p className={inter.className}>
-                Instantly deploy your Next.js site to a shareable URL
-                with&nbsp;Vercel.
-              </p>
+              <p className={inter.className}>{result4description}</p>
             </a>
           </div>
         ) : (
           <h1>
-            <div className={styles.center}>ask your question above!</div>
+            <div className={styles.center}>Ask your question above!</div>
           </h1>
         )}
       </main>
