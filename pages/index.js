@@ -64,11 +64,9 @@ export default function Home() {
               rel="noopener noreferrer"
             >
               <h2 className={inter.className}>
-                Docs <span>-&gt;</span>
+                Title1: <span>-&gt;</span>
               </h2>
-              <p className={inter.className}>
-                Find in-depth information about Next.js features and&nbsp;API.
-              </p>
+              <p className={inter.className}>description of *overview*</p>
             </a>
 
             <a
@@ -77,12 +75,8 @@ export default function Home() {
               target="_blank"
               rel="noopener noreferrer"
             >
-              <h2 className={inter.className}>
-                Learn <span>-&gt;</span>
-              </h2>
-              <p className={inter.className}>
-                Learn about Next.js in an interactive course with&nbsp;quizzes!
-              </p>
+              <h2 className={inter.className}>Module2:</h2>
+              <p className={inter.className}>introduction to the topic...</p>
             </a>
 
             <a
@@ -92,11 +86,9 @@ export default function Home() {
               rel="noopener noreferrer"
             >
               <h2 className={inter.className}>
-                Templates <span>-&gt;</span>
+                Module3: <span>-&gt;</span>
               </h2>
-              <p className={inter.className}>
-                Discover and deploy boilerplate example Next.js&nbsp;projects.
-              </p>
+              <p className={inter.className}>Discover core learnings:</p>
             </a>
 
             <a
@@ -105,13 +97,8 @@ export default function Home() {
               target="_blank"
               rel="noopener noreferrer"
             >
-              <h2 className={inter.className}>
-                Deploy <span>-&gt;</span>
-              </h2>
-              <p className={inter.className}>
-                Instantly deploy your Next.js site to a shareable URL
-                with&nbsp;Vercel.
-              </p>
+              <h2 className={inter.className}>Module4</h2>
+              <p className={inter.className}>advanced studies</p>
             </a>
           </div>
         ) : (

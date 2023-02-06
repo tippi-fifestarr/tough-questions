@@ -1,8 +1,17 @@
-# Axelar: Tough Questions
+# Axelar: Tough Questions (Starter)
 
-Tippi created this simple starter for his presentation using the create-next-app as template, inspired by https://www.tutorai.me/
+![starting image](public/starterimage.png)
+
+Tippi created this simple **starter-branch** for his presentation using the create-next-app as template, inspired by https://www.tutorai.me/
 
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+
+## How I did it:
+
+1. First, I scraped out the index.js from the nextJS starter and filled it with my idea and "brand".
+1. Then, I used state variables to conditionally render the 4 modules onClick of the Ask button.
+1. Then I updated this readme and my presentation!
+1. For the final version, check out: [rendered-gpt branch](https://github.com/tippi-fifestarr/tough-questions/tree/rendered-gpt)
 
 ## Getting Started
 
