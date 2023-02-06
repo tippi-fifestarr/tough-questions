@@ -2,12 +2,17 @@ import Head from "next/head";
 import Image from "next/image";
 import { Inter } from "@next/font/google";
 import styles from "@/styles/Home.module.css";
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import Asker from "@/components/Asker";
 
 const inter = Inter({ subsets: ["latin"] });
 
 export default function Home() {
+  const [prompt, setPrompt] = useState("");
   const [questionAnswered, setQuestionAnswered] = useState(false);
+  const [result, setResult] = useState("");
+  // useEffect with the questionAnswered and the result of the api call
+
   return (
     <>
       <Head>
@@ -42,15 +47,14 @@ export default function Home() {
 
         <div className={styles.center}>
           <div>
-            <h1>Tough Questions</h1>
+            <h1>Break *Tough Questions* into Modules</h1>
             <textarea
               placeholder="start typing here"
+              onChange={(e) => setPrompt(e.target.value)}
               className={styles.promptbox}
             />
           </div>
-          <div className={styles.thirteen}>
-            <button onClick={setQuestionAnswered}>Ask</button>
-          </div>
+          <Asker promptReq={prompt} />
           <div className={styles.input}></div>
         </div>
 
@@ -60,6 +64,7 @@ export default function Home() {
             <a
               href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
               className={styles.card}
+              onClick={console.log(prompt)}
               target="_blank"
               rel="noopener noreferrer"
             >

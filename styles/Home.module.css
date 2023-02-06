@@ -89,11 +89,11 @@
   display: flex;
   place-content: center;
   align-items: center;
-  justify-content: flex-end;
   flex: 0 0 auto;
   flex-flow: row nowrap;
   gap: 12px;
-  height: min-content;
+  font-size: x-large;
+  height: 100%;
   overflow: hidden;
   padding: 0px;
   position: relative;
