@@ -1,6 +1,12 @@
-# Axelar: Tough Questions
-
+# Axelar: Tough Questions (ERROR BRANCH)
+ 
 Tippi created this simple starter for his presentation using the create-next-app as template, inspired by https://www.tutorai.me/
+
+## He went outside of the narrow scope because of UX principles of usability in design.
+
+> The result, a 20 minute jumble of code and only 65 minutes left.  So, he pushed his changes, went to bed and woke up in the morning with a solution in head.  
+
+# How would you fix this mess?
 
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
